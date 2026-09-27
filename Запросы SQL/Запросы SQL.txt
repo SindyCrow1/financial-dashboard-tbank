@@ -1,0 +1,35 @@
+-- Запрос 1: P&L с долей каждой статьи
+SELECT 
+    indicator,
+    year_2025,
+    ROUND(year_2025 * 100.0 / (SELECT year_2025 FROM income_statement WHERE indicator = 'Процентные доходы'), 1) AS share_pct
+FROM income_statement
+ORDER BY year_2025 DESC;
+
+-- Запрос 2: Топ-3 статьи по изменению
+SELECT 
+    indicator,
+    year_2025 - year_2024 AS absolute_change,
+    change_pct
+FROM income_statement
+ORDER BY ABS(year_2025 - year_2024) DESC
+LIMIT 3;
+
+-- Запрос 3: Квартальная динамика с накоплением
+SELECT 
+    quarter,
+    revenue,
+    net_profit,
+    ROUND(net_profit * 100.0 / revenue, 1) AS net_margin_pct,
+    SUM(revenue) OVER (ORDER BY quarter) AS cumulative_revenue
+FROM quarterly
+ORDER BY quarter;
+
+-- Запрос 4: Сводка KPI
+SELECT 
+    indicator,
+    year_2025,
+    year_2024,
+    change_pct
+FROM kpi
+ORDER BY change_pct DESC;

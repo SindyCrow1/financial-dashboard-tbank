@@ -24,13 +24,13 @@
 
 ## 📷 Скриншоты
 ### Дашборд
-![Дашборд](screenshots/dashboard.png)
+![Дашборд](screenshots/dashboard.jpg)
 
 ### SQL-запросы
-![Запрос 1](screenshots/sql/query1.png)
-![Запрос 2](screenshots/sql/query2.png)
-![Запрос 3](screenshots/sql/query3.png)
-![Запрос 4](screenshots/sql/query4.png)
+![Запрос 1](screenshots/sql/query1.jpg)
+![Запрос 2](screenshots/sql/query2.jpg)
+![Запрос 3](screenshots/sql/query3.jpg)
+![Запрос 4](screenshots/sql/query4.jpg)
 
 ## 📂 Структура проекта
 - `data/` — исходные данные (Excel)
